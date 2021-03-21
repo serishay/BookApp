@@ -1,0 +1,16 @@
+.search-session{
+    background-image: url("../../../assets/img/search_section2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom:130px ;
+}
+
+.input-section{
+    margin: 0 auto;
+    width: 100px;
+}
+
+.search-session input{
+    display: inline;
+    text-align: left;
+}

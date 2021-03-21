@@ -1,0 +1,14 @@
+input.form-control,input.form-control:focus{ 
+    color:black;
+    border-radius:0px;
+    border-width: 2px;
+}
+
+button{
+    border-radius:30px;
+}
+
+.login-wrapper{
+    margin:5rem auto;
+    width: 20rem;
+}

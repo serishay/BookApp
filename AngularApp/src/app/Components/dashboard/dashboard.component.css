@@ -1,0 +1,30 @@
+.carousel-control-prev:hover{
+    color: black;
+    background: whitesmoke;
+}
+.carousel-control-next{
+    color:black;
+    background: whitesmoke;
+}
+
+img{
+    width: 100%;
+}
+.carousel{
+margin-bottom: 0%;
+padding-bottom: 0%;
+}
+
+.jumbotron-billboard{
+    margin:0px;
+    border:0px;
+    background: linear-gradient(#a5a58d,#b7b7a4,);
+    background-position: center;
+    background-size: cover;
+    color: black;
+    margin-top: 0%;
+    padding-top: 0%;
+}
+
+
+    

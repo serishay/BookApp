@@ -1,0 +1,18 @@
+<div class="rec-session ">
+    <h3 class="h1-fav text-center">Recommendations</h3>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div *ngFor="let item of recommend">
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;height: 34rem;">
+                    <img src="{{item.urlImg}}" class="card-img-top" style="width: 18rem;height: 20rem;" alt="Image">
+                    <div class="card-body ">
+                        <h5 class="card-title">Title:{{item.title}}</h5>
+                        <strong>Authors:</strong>
+                        <span>{{item.author}}</span>
+                    </div>
+                    <button class="btn btn-success" (click)="onFavourite(item)">Add to Favourite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

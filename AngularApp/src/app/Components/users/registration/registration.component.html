@@ -1,0 +1,33 @@
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center">
+                User Registration
+            </h3>
+                <form [formGroup]="service.registerForm" (submit)="onSubmit()">
+                    <div class="form-group required">
+                        <label >UserName</label>
+                        <input class="form-control" formControlName="UserId">
+                        <label class="text-danger" *ngIf="service.registerForm.get('UserId').touched && service.registerForm.get('UserId').errors?.required">This field is required.</label>
+                    </div>
+                    <div formGroupName="Passwords">
+                        <div class="form-group required">
+                            <label >Password</label>
+                            <input type="password" class="form-control" formControlName="Password">
+                            <label class="text-danger" *ngIf="service.registerForm.get('Passwords.Password').touched && service.registerForm.get('Passwords.Password').errors?.required">This field is required.</label>
+                            <label class="text-danger" *ngIf="service.registerForm.get('Passwords.Password').touched && service.registerForm.get('Passwords.Password').errors?.minlength">Minimun 4 character is required.</label>
+                        </div>
+                        <div class="form-group required">
+                            <label >Confirm Password</label>
+                            <input  type="password" class="form-control" formControlName="ConfirmPassword">
+                            <label class="text-danger" *ngIf="service.registerForm.get('Passwords.ConfirmPassword').touched && service.registerForm.get('Passwords.ConfirmPassword').errors?.required">This field is required.</label>
+                            <label class="text-danger" *ngIf="service.registerForm.get('Passwords.ConfirmPassword').touched && service.registerForm.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm password does not match.</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-lg btn-block btn-dark" [disabled]="!service.registerForm.valid">Sign Up</button>
+                    </div>
+                </form>
+         </div> 
+    </div>
+</div>

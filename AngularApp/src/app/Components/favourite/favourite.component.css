@@ -1,0 +1,11 @@
+.fav-session{
+    padding-bottom:150px;
+}
+.h1-fav{
+    color:blue;
+    text-align: center;
+    text-decoration: underline;
+}
+html,body{
+    width: 100%;
+}

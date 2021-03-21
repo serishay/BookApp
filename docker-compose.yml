@@ -1,0 +1,55 @@
+version: '3'
+services:
+  authenticationservice:
+    image: authenticationapi
+    build: AuthenticationService/AuthenticationService
+    ports: 
+      - "8080:80"
+    depends_on:
+      - authenticationsqldb
+    environment:
+      SQL_CONNECTION: "Server=authenticationsqldb;database=DockerDb;User Id=sa;password=pass@123"
+
+  favouriteservice:
+    image: favouriteapi
+    build: favouriteAPI/favouriteAPI
+    ports: 
+      - "8090:80"
+    depends_on:
+      - favouriteMongo
+    environment:
+      MONGO_CONNECTION: "mongodb://favouriteMongo:27017"
+    
+  recommendationservice:
+    image: recommendationapi
+    build: RecommendationAPI/RecommendationAPI
+    ports: 
+      - "8095:80"
+    depends_on:
+      - favouriteMongo
+    environment:
+      MONGO_CONNECTION: "mongodb://favouriteMongo:27017"
+
+
+  authenticationsqldb:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "pass@123"
+      ACCEPT_EULA: "Y"
+
+  favouriteMongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  bookapp:
+    image: bookapp
+    build: AngularApp
+    depends_on: 
+      - authenticationservice
+      - favouriteservice
+      - recommendationservice
+    ports:
+      - "4200:4200"

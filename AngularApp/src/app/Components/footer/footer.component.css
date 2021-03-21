@@ -1,0 +1,44 @@
+.footer-container 
+{
+  position: relative;;
+  /* left:0;
+  bottom: 0;
+  width: 100%; */
+}
+.footer-content {
+  max-width: 100%;
+  margin: auto;
+  padding: 0 40px;
+}
+.copyright 
+{
+  flex-direction: column;
+  font-size: 14px;
+}
+ul 
+{
+  padding: 0;
+  list-style: none;
+}        
+ul,a 
+{
+    color: inherit;
+} 
+.social-media 
+{
+    display: flex;
+    padding-bottom: 40px;
+}  
+.icon 
+{
+  margin: 0 15px;
+}
+.icon:first-child {
+  margin-left: 0;
+}  
+.footer-img
+{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
